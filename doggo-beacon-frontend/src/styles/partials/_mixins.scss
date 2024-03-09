@@ -1,0 +1,24 @@
+
+
+@mixin mobile {
+  @media screen and (min-width: $mobile-width) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+/* Auto Margins for Desktop Screen Sizes */
+@mixin desktop-auto-margin {
+  width: 63.75rem;
+  margin: auto;
+}
