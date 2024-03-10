@@ -1,0 +1,15 @@
+{
+  "name": "doggo-beacon-backend",
+  "version": "1.0.0",
+  "description": "Backend for Doggo Beacon Capston Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Doggo Beacon repo"
+  },
+  "author": "Rozan Karimi",
+  "license": "ISC"
+}
