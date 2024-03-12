@@ -1,3 +1,39 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
+// @use "../../styles/partials/global.scss" as *;
+
+
+.App--footer{
+    &__text{
+        color: $regular-Brown;
+        &--info{
+            padding-top: 4rem;
+            color: $regular-Brown;
+        }
+        &--bottom{
+            display: flex;
+            padding: 25px;
+            justify-content: space-between;
+            color: $regular-Brown;
+        }
+    }
+    
+    &__iconbox{
+        display: flex;
+        justify-content: space-around;
+
+    }
+}
+.logoImageFooter{
+    width: 94px;
+    height: 85px;
+}
+hr{
+    color: $light-Brown;
+    width: 448px;
+    height: 1px;
+}
+.subFooter{
+    color: $regular-Brown;
+}
