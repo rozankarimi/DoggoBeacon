@@ -2,6 +2,10 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
+*{
+    font-family: $font-regular;
+}
+
 .App--header{
     display: flex;
     padding: 30px;

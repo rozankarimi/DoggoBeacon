@@ -1,9 +1,10 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
-// @use "../../styles/partials/global.scss" as *;
 
-
+*{
+    font-family: $font-regular;
+}
 .App--footer{
     &__text{
         color: $regular-Brown;
