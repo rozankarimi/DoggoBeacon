@@ -3,19 +3,19 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("dog_breed", function (table) {
+  return knex.schema.createTable("dogbreed", function (table) {
     table.increments("id").primary();
-    table.string("Height").notNullable(); // Height
-    table.string("Playfullness").notNullable(); //Playfullness
-    table.string("Energy").notNullable(); //Energy
-    table.string("Shedding").notNullable(); //Shedding
-    table.string("Trainibility").notNullable(); //Trainibility
-    table.string("Grooming").notNullable(); //Grooming
-    table.string("Weight").notNullable(); //Weight
-    table.string("Barking").notNullable(); //Barking
+    table.string("height").notNullable();
+    table.string("playfulness").notNullable();
+    table.string("energy").notNullable();
+    table.string("shedding").notNullable();
+    table.string("trainability").notNullable();
+    table.string("grooming").notNullable();
+    table.string("weight").notNullable();
+    table.string("barking").notNullable();
   });
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable("dog_breed");
+  return knex.schema.dropTable("dogbreed");
 };
