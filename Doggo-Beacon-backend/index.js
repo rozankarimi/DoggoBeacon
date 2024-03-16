@@ -15,6 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use("/home", factorsRoutes);
+// app.use("/breed", factorsRoutes);
 app.use("/result", resultRoutes);
 
 app.listen(PORT, () => {
