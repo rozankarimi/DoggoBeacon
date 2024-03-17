@@ -1,8 +1,6 @@
 import "./Questionnaire.scss";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import Apartment from "../../assets/images/Apartment.jpeg";
-// import House from "../../assets/images/House.jpeg";
 
 function Questionnaire() {
   const navigate = useNavigate();
@@ -14,6 +12,7 @@ function Questionnaire() {
       image: [
         "../../assets/images/Apartment.jpeg",
         "../../assets/images/House.jpeg",
+        "",
       ],
     },
     {
@@ -82,28 +81,35 @@ function Questionnaire() {
   return (
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
-      <img
-        src={currentQuestion.image[0]}
-        className="logoImage"
-        alt="questionPic"
-      />
-      {/* <img className="logoImage" src={Apartment} alt="Apartment pic" /> */}
-      <p>{currentQuestion.answers[0]}</p>
-      {/* <img className="logoImage" src={House} alt="House" /> */}
-      <img
-        src={currentQuestion.image[1]}
-        className="logoImage"
-        alt="questionPic"
-      />
-      <p>{currentQuestion.answers[1]}</p>
-      <img
-        src={currentQuestion.image[2]}
-        className="logoImage"
-        alt="questionPic"
-      />
-      <p>{currentQuestion.answers[2]}</p>
-
-      <button onClick={nextQuestion}>NEXT</button>
+      <div className="hero__box--questioner">
+        <div>
+          <img
+            src={currentQuestion.image[0]}
+            className="logoImage"
+            alt="questionPic"
+          />
+          <p>{currentQuestion.answers[0]}</p>
+        </div>
+        <div>
+          <img
+            src={currentQuestion.image[1]}
+            className="logoImage"
+            alt="questionPic"
+          />
+          <p>{currentQuestion.answers[1]}</p>
+        </div>
+        <div>
+          <img
+            src={currentQuestion.image[2]}
+            className="logoImage"
+            alt="questionPic"
+          />
+          <p>{currentQuestion.answers[2]}</p>
+        </div>
+      </div>
+      <button onClick={nextQuestion} className="button">
+        NEXT
+      </button>
     </div>
   );
 }
