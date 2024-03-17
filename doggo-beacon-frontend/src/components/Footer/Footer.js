@@ -32,7 +32,6 @@ class Footer extends Component {
             </div>
           </div>
         </div>
-
         <div className="App--footer__text--info">
           <p>Contact US: +1 123 456 7890</p>
           <p>Email: support@dogbeacon.ca</p>
