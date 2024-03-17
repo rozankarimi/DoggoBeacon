@@ -1,3 +1,17 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
+
+.hero__box{
+    color: $regular-Brown;
+    &--questioner{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+.button{
+    border-radius: 14px solid rgb(183, 148, 7);
+    background-color: rgb(245, 190, 102);
+    color: $regular-Brown;
+    font-weight: 200;
+}

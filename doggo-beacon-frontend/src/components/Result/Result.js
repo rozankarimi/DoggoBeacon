@@ -1,15 +1,22 @@
-import "./Header.scss";
-import React from "react";
+import "./Result.scss";
 import Lottie from "react-lottie";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
-import heroPic from "../../assets/images/HeroPict.jpg";
+import animationData2 from "../../lotties/Animation -Slipper.json";
 
-function Header() {
+function Result() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData2,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -28,11 +35,14 @@ function Header() {
         </div>
       </div>
       <div className="App--hero">
-        <img className="heroImage" src={heroPic} alt="dognose" />
+        <div>
+          <Lottie options={defaultOptions2} height={300} width={300} />
+        </div>
       </div>
-      <hr />
+      <div className="App--main">
+        <h3>Your Breed Results:</h3>
+      </div>
     </div>
   );
 }
-
-export default Header;
+export default Result;
