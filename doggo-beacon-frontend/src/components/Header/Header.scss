@@ -38,9 +38,10 @@
     transform: scaleX(0.82) scaleY(0.75);
 }
 hr{
-    color: $light-Brown;
-    width: 448px;
+    background-color: $light-Brown;
     height: 1px;
+    border: 4px;
+    width: 88%;
 }
 h1{
     font-size: 30px;
