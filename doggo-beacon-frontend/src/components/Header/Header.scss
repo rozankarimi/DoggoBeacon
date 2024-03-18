@@ -4,6 +4,7 @@
 
 *{
     font-family: $font-regular;
+    font-size: large;
 }
 
 .App--header{
@@ -24,8 +25,8 @@
     }
 }
 .App--hero{
-    width: 350px;
-    height: 300px;
+    width: 200px;
+    height: 250px;
 }
 .logoImage{
     width: 56px;
@@ -34,9 +35,14 @@
 .heroImage{
     width: 450px;
     height: 278px;
+    transform: scaleX(0.82) scaleY(0.75);
 }
 hr{
     color: $light-Brown;
     width: 448px;
     height: 1px;
+}
+h1{
+    font-size: 30px;
+
 }
