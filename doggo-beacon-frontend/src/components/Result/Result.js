@@ -3,8 +3,10 @@ import Lottie from "react-lottie";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import animationData2 from "../../lotties/Animation -Slipper.json";
+import { useNavigate } from "react-router-dom";
 
 function Result() {
+  const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -42,6 +44,9 @@ function Result() {
       <div className="App--main">
         <h3>Your Breed Results:</h3>
       </div>
+      <button onClick={() => navigate("/")} className="button">
+        DONE
+      </button>
     </div>
   );
 }
