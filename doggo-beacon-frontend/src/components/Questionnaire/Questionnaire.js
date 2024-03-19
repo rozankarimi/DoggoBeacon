@@ -1,6 +1,20 @@
 import "./Questionnaire.scss";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Apartment from "../../assets/images/Apartment.jpeg";
+import House from "../../assets/images/House.jpeg";
+import indoor from "../../assets/images/Indoor.png";
+import Walk from "../../assets/images/Walk2.jpeg";
+import lessHour from "../../assets/images/Less than an hour.png";
+import fourhour from "../../assets/images/4.jpeg";
+import eighthour from "../../assets/images/8.jpeg";
+import shed from "../../assets/images/Shedding.jpeg";
+import HellNo from "../../assets/images/HellNo.png";
+import basic from "../../assets/images/basic.png";
+import advance from "../../assets/images/Advancedtraining.png";
+import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
+import weight from "../../assets/images/Wiegth.jpeg";
+import bark from "../../assets/images/Bark2.jpeg";
 
 function Questionnaire() {
   const navigate = useNavigate();
@@ -9,64 +23,49 @@ function Questionnaire() {
       order: 0,
       question: "Where will your new dog live?",
       answers: ["APARTMENT", "HOUSE"],
-      image: [
-        "../../assets/images/Apartment.jpeg",
-        "../../assets/images/House.jpeg",
-        "",
-      ],
+      image: [Apartment, House],
     },
     {
       order: 1,
       question: "How much will your dog be able to play with you?",
       answers: ["ONLY INDOOR PLAY", "SHORT WALK", "OCCASIONAL LONG WALK"],
-      image: [
-        "../../assets/images/indoor.jpeg",
-        "../../assets/images/Walk2.jpeg",
-      ],
+      image: [indoor, Walk],
     },
     {
       order: 2,
       question: "How much time will your new dog be alone?",
       answers: [" < 1 HOUR", "4 HOURS", " > 8 HOURS"],
-      image: [
-        "../../assets/images/Less than an hour.png",
-        "../../assets/images/4.jpeg",
-        "../../assets/images/8.jpeg",
-      ],
+      image: [lessHour, fourhour, eighthour],
     },
     {
       order: 3,
       question: "Is Shedding OK?",
       answers: ["YES", "NO"],
-      image: ["../../assets/images/Shedding.jpeg"],
+      image: [shed],
     },
     {
       order: 4,
       question: "How much training will your new dog recieve?",
       answers: ["NONE", "BASIC", "ADVANCED"],
-      image: [
-        "../../assets/images/HellNo.png",
-        "../../assets/images/basic.png",
-        "../../assets/images/Advancedtraining.png",
-      ],
+      image: [HellNo, basic, advance],
     },
     {
       order: 5,
       question: "How often are you willing to groom the Dog?",
       answers: ["DAILY", "WEEKLY", "OCCASIONALLY"],
-      image: ["../../assets/images/Hairbrush and scissors icon.jpeg"],
+      image: [grooming],
     },
     {
       order: 6,
       question: "How big or small your new dog be?",
       answers: ["20 LBS OR UNDER  ", "20-50 LBS ", "50 LBS OR MORE"],
-      image: ["../../assets/images/Wiegth.jpeg"],
+      image: [weight],
     },
     {
       order: 7,
       question: "How much barking can you tolerate?",
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "],
-      image: ["../../assets/images/Bark2.jpeg"],
+      image: [bark],
     },
   ]);
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
@@ -90,21 +89,41 @@ function Questionnaire() {
           />
           <p>{currentQuestion.answers[0]}</p>
         </div>
+
         <div>
-          <img
-            src={currentQuestion.image[1]}
-            className="logoImage"
-            alt="questionPic"
-          />
-          <p>{currentQuestion.answers[1]}</p>
+          {currentQuestion.image[1] ? (
+            <div className="image-with-answers">
+              <img
+                src={currentQuestion.image[1]}
+                className="logoImage"
+                alt="questionPic"
+              />
+              <p>{currentQuestion.answers[1]}</p>
+            </div>
+          ) : (
+            <div>
+              {" "}
+              <p>{currentQuestion.answers[1]}</p>
+            </div>
+          )}
         </div>
+
         <div>
-          <img
-            src={currentQuestion.image[2]}
-            className="logoImage"
-            alt="questionPic"
-          />
-          <p>{currentQuestion.answers[2]}</p>
+          {currentQuestion.image[2] ? (
+            <div>
+              <img
+                src={currentQuestion.image[2]}
+                className="logoImage"
+                alt="questionPic"
+              />
+              <p>{currentQuestion.answers[2]}</p>
+            </div>
+          ) : (
+            <div>
+              {" "}
+              <p>{currentQuestion.answers[2]}</p>
+            </div>
+          )}
         </div>
       </div>
       <button onClick={nextQuestion} className="button">
