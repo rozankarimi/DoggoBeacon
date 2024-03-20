@@ -81,49 +81,35 @@ function Questionnaire() {
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
       <div className="hero__box--questioner">
-        <div>
+        <div className="answer-container">
           <img
             src={currentQuestion.image[0]}
-            className="logoImage"
+            className="question-image"
             alt="questionPic"
           />
           <p>{currentQuestion.answers[0]}</p>
         </div>
 
-        <div>
-          {currentQuestion.image[1] ? (
-            <div className="image-with-answers">
-              <img
-                src={currentQuestion.image[1]}
-                className="logoImage"
-                alt="questionPic"
-              />
-              <p>{currentQuestion.answers[1]}</p>
-            </div>
-          ) : (
-            <div>
-              {" "}
-              <p>{currentQuestion.answers[1]}</p>
-            </div>
+        <div className="answer-container">
+          {currentQuestion.image[1] && (
+            <img
+              src={currentQuestion.image[1]}
+              className="question-image"
+              alt="questionPic"
+            />
           )}
+          <p>{currentQuestion.answers[1]}</p>
         </div>
 
-        <div>
-          {currentQuestion.image[2] ? (
-            <div>
-              <img
-                src={currentQuestion.image[2]}
-                className="logoImage"
-                alt="questionPic"
-              />
-              <p>{currentQuestion.answers[2]}</p>
-            </div>
-          ) : (
-            <div>
-              {" "}
-              <p>{currentQuestion.answers[2]}</p>
-            </div>
+        <div className="answer-container">
+          {currentQuestion.image[2] && (
+            <img
+              src={currentQuestion.image[2]}
+              className="question-image"
+              alt="questionPic"
+            />
           )}
+          <p>{currentQuestion.answers[2]}</p>
         </div>
       </div>
       <button onClick={nextQuestion} className="button">
