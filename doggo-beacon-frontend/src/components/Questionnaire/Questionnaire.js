@@ -1,6 +1,8 @@
 import "./Questionnaire.scss";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import Axios for making HTTP requests
+
 import Apartment from "../../assets/images/Apartment.jpeg";
 import House from "../../assets/images/House.jpeg";
 import indoor from "../../assets/images/Indoor.png";
@@ -18,115 +20,114 @@ import bark from "../../assets/images/Bark2.jpeg";
 
 function Questionnaire() {
   const navigate = useNavigate();
-  const [questions, setQuestions] = useState([
+  const [answers, setAnswers] = useState({});
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const questions = [
     {
       order: 0,
       question: "Where will your new dog live?",
       answers: ["APARTMENT", "HOUSE"],
-      image: [Apartment, House],
+      images: [Apartment, House],
     },
     {
       order: 1,
       question: "How much will your dog be able to play with you?",
       answers: ["ONLY INDOOR PLAY", "SHORT WALK", "OCCASIONAL LONG WALK"],
-      image: [indoor, Walk],
+      images: [indoor, Walk],
     },
     {
       order: 2,
       question: "How much time will your new dog be alone?",
       answers: [" < 1 HOUR", "4 HOURS", " > 8 HOURS"],
-      image: [lessHour, fourhour, eighthour],
+      images: [lessHour, fourhour, eighthour],
     },
     {
       order: 3,
       question: "Is Shedding OK?",
       answers: ["YES", "NO"],
-      image: [shed],
+      images: [shed],
     },
     {
       order: 4,
-      question: "How much training will your new dog recieve?",
+      question: "How much training will your new dog receive?",
       answers: ["NONE", "BASIC", "ADVANCED"],
-      image: [HellNo, basic, advance],
+      images: [HellNo, basic, advance],
     },
     {
       order: 5,
       question: "How often are you willing to groom the Dog?",
       answers: ["DAILY", "WEEKLY", "OCCASIONALLY"],
-      image: [grooming],
+      images: [grooming],
     },
     {
       order: 6,
-      question: "How big or small your new dog be?",
+      question: "How big or small will your new dog be?",
       answers: ["20 LBS OR UNDER  ", "20-50 LBS ", "50 LBS OR MORE"],
-      image: [weight],
+      images: [weight],
     },
     {
       order: 7,
       question: "How much barking can you tolerate?",
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "],
-      image: [bark],
+      images: [bark],
     },
-  ]);
-  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
-  function nextQuestion() {
-    console.log(currentQuestion.order, questions.length - 1);
-    if (currentQuestion.order == questions.length - 1) {
-      navigate("/result");
+  ];
+
+  const handleOptionClick = (questionIndex, answerIndex) => {
+    setAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [questionIndex]: answerIndex,
+    }));
+    setSelectedImage(questions[questionIndex].images[answerIndex]);
+  };
+
+  const handleNextQuestion = async () => {
+    if (currentQuestionIndex === questions.length - 1) {
+      // Send the user input data to the backend
+      try {
+        await axios.post("/http://localhost:8080/home", answers);
+        // Navigate to the result page after successfully sending data
+        navigate("/result");
+      } catch (error) {
+        console.error("Error sending data to the backend:", error);
+        // Handle error
+      }
     } else {
-      setCurrentQuestion(questions[currentQuestion.order + 1]);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
-  }
+  };
+
+  const currentQuestion = questions[currentQuestionIndex];
+
   return (
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
       <div className="hero__box--questioner">
-        <div>
-          <img
-            src={currentQuestion.image[0]}
-            className="logoImage"
-            alt="questionPic"
-          />
-          <p>{currentQuestion.answers[0]}</p>
-        </div>
-
-        <div>
-          {currentQuestion.image[1] ? (
-            <div className="image-with-answers">
+        {currentQuestion.answers.map((answer, index) => (
+          <div
+            key={index}
+            onClick={() => handleOptionClick(currentQuestion.order, index)}
+          >
+            <p>{answer}</p>
+            {currentQuestion.images.length >= index + 1 && (
               <img
-                src={currentQuestion.image[1]}
+                src={currentQuestion.images[index]}
                 className="logoImage"
                 alt="questionPic"
               />
-              <p>{currentQuestion.answers[1]}</p>
-            </div>
-          ) : (
-            <div>
-              {" "}
-              <p>{currentQuestion.answers[1]}</p>
-            </div>
-          )}
-        </div>
-
-        <div>
-          {currentQuestion.image[2] ? (
-            <div>
-              <img
-                src={currentQuestion.image[2]}
-                className="logoImage"
-                alt="questionPic"
-              />
-              <p>{currentQuestion.answers[2]}</p>
-            </div>
-          ) : (
-            <div>
-              {" "}
-              <p>{currentQuestion.answers[2]}</p>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        ))}
       </div>
-      <button onClick={nextQuestion} className="button">
+      {selectedImage && (
+        <img
+          src={selectedImage}
+          alt="Selected option"
+          className="selected-image"
+        />
+      )}
+      <button onClick={handleNextQuestion} className="button">
         NEXT
       </button>
     </div>
