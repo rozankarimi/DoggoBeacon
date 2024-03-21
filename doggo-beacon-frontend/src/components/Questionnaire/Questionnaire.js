@@ -124,7 +124,12 @@ function Questionnaire() {
       <h4>{currentQuestion.question}</h4>
       <div className="hero__box--questioner">
         {currentQuestion.answers.map((answer, index) => (
-          <div key={index} className="answer-container">
+          <div
+            key={index}
+            className={`answer-container ${
+              index === 0 || index === 1 ? "wide-image" : ""
+            }`}
+          >
             {currentQuestion.image[index] && (
               <img
                 src={currentQuestion.image[index]}
@@ -141,9 +146,11 @@ function Questionnaire() {
           </div>
         ))}
       </div>
-      <button onClick={nextQuestion} className="button">
-        NEXT
-      </button>
+      <div className="button--box">
+        <button onClick={nextQuestion} className="button">
+          NEXT
+        </button>
+      </div>
     </div>
   );
 }

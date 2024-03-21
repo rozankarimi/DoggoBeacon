@@ -16,6 +16,9 @@
     background-color: rgba(178, 115, 13, 0.823);
     color: $regular-Brown;
     font-weight: 200;
+    &--box{
+        padding-top: 14px;
+    }
 }
 
 .answer-container {
@@ -30,3 +33,12 @@ max-width: 200px;
 height: auto;
 margin-bottom: 10px;
 }
+.answer-button{
+    color: $regular-Brown;
+    background-color: rgb(203, 192, 177);
+    border-radius: 10px;
+    
+}
+// .wide-image{
+//     width: 80%;
+// }
