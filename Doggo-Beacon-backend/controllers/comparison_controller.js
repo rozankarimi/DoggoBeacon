@@ -77,7 +77,9 @@ const matchCriteria = async (req, res) => {
       });
 
     // Extract matched categories from the result
-    criteria.forEach((row) => matchedCategories.push(row.category));
+    criteria.forEach((row) => {
+      matchedCategories.push({ name: row.name, image: row.image_link });
+    });
 
     // Remove duplicate categories from matchedCategories if needed
     const uniqueMatchedCategories = [...new Set(matchedCategories)];
