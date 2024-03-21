@@ -1,4 +1,5 @@
 const Breed = require("../models/breed");
+const router = require("../routes/factors");
 
 async function index(req, res) {
   try {

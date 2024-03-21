@@ -4,6 +4,8 @@ import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import animationData2 from "../../lotties/Animation -Slipper.json";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Result() {
   const navigate = useNavigate();
@@ -23,6 +25,24 @@ function Result() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const [randomFact, setRandomFact] = useState("");
+
+  useEffect(() => {
+    async function fetchRandomDogFact() {
+      try {
+        const randomIndex = Math.floor(Math.random() * 21);
+        const response = await axios.get("http://localhost:8080/result");
+        console.log(response);
+        setRandomFact(response.data[randomIndex].description);
+      } catch (error) {
+        console.error("Error fetching random dog fact:", error);
+      }
+    }
+
+    fetchRandomDogFact();
+  }, []);
+
   return (
     <div>
       <div className="App--header">
@@ -44,6 +64,11 @@ function Result() {
       <div className="App--main">
         <h3>Your Breed Results:</h3>
       </div>
+      <div className="App--main">
+        <p>DOG FACT</p>
+        <p>{randomFact}</p>
+      </div>
+
       <button onClick={() => navigate("/")} className="button">
         DONE
       </button>

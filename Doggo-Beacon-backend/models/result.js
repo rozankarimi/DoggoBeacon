@@ -13,17 +13,17 @@ class Result {
     return await knex(this.tableName).where("id", id).first();
   }
 
-  static async create(data) {
-    return await knex(this.tableName).insert(data);
-  }
+  // static async create(data) {
+  //   return await knex(this.tableName).insert(data);
+  // }
 
   static async update(id, data) {
     return await knex(this.tableName).where("id", id).update(data);
   }
 
-  static async destroy(id) {
-    return await knex(this.tableName).where("id", id).del();
-  }
+  // static async destroy(id) {
+  //   return await knex(this.tableName).where("id", id).del();
+  // }
 
   static async attributes() {
     columnInfo = await knex(this.tableName).columnInfo();
