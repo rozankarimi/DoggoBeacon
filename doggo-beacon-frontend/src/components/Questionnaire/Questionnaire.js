@@ -104,10 +104,12 @@ function Questionnaire() {
       );
       console.log(response.data.matchedCategories);
       // Navigate to the result page based on the backend response
-      if (response.data.matchedCategories.length > 0) {
+      if (
+        response.data.matchedCategories &&
+        response.data.matchedCategories.length > 0
+      ) {
         navigate(
-          `/result`
-          // `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
+          `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
         );
       } else {
         console.log("User responses don't match database.");
