@@ -23,10 +23,6 @@ app.get("/db", (req, res) => {
   res.send("Database testing");
 });
 
-// app.post("/compare", (req, res) => {
-//   res.send("Post testing");
-// });
-
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT}`);
 });

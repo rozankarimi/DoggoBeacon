@@ -4,8 +4,8 @@ import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import animationData2 from "../../lotties/Animation -Slipper.json";
 import { useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
-// import axios from "axios";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Result() {
   const navigate = useNavigate();
@@ -26,17 +26,22 @@ function Result() {
     },
   };
 
-  // useEffect(() => {
-  //   fetchDogFacts();
-  // });
+  const [randomFact, setRandomFact] = useState("");
 
-  // async function fetchDogFacts() {
-  //   try {
-  //     const res = await axios.get("http://localhost:8080/result");
-  //   } catch (error) {
-  //     console.error("Failed to fetch inventories:", error);
-  //   }
-  // }
+  useEffect(() => {
+    async function fetchRandomDogFact() {
+      try {
+        const randomIndex = Math.floor(Math.random() * 21);
+        const response = await axios.get("http://localhost:8080/result");
+        console.log(response);
+        setRandomFact(response.data[randomIndex].description);
+      } catch (error) {
+        console.error("Error fetching random dog fact:", error);
+      }
+    }
+
+    fetchRandomDogFact();
+  }, []);
 
   return (
     <div>
@@ -59,8 +64,9 @@ function Result() {
       <div className="App--main">
         <h3>Your Breed Results:</h3>
       </div>
-      <div>
-        <p>Dogg Fact</p>
+      <div className="App--main">
+        <p>DOG FACT</p>
+        <p>{randomFact}</p>
       </div>
 
       <button onClick={() => navigate("/")} className="button">
