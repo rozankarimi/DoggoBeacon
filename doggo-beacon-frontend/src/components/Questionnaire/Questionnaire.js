@@ -132,8 +132,12 @@ function Questionnaire() {
                 alt={`Answer ${index + 1}`}
               />
             )}
-            <p>{answer}</p>
-            <button onClick={() => handleAnswerClick(answer)}>Select</button>
+            <button
+              onClick={() => handleAnswerClick(answer)}
+              className="answer-button"
+            >
+              {answer}
+            </button>
           </div>
         ))}
       </div>
