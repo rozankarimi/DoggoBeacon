@@ -43,6 +43,24 @@ function Result() {
     fetchRandomDogFact();
   }, []);
 
+  const [matchedCategories, setMatchedCategories] = useState([]);
+
+  useEffect(() => {
+    // Make an API call to fetch matched categories from the backend
+    const fetchMatchedCategories = async () => {
+      try {
+        const response = await axios.post("http://localhost:8080/compare");
+        // Extract matched categories from the response data
+        const categories = response.data.matchedCategories;
+        setMatchedCategories(categories);
+      } catch (error) {
+        console.error("Error fetching matched categories:", error);
+      }
+    };
+
+    fetchMatchedCategories();
+  }, []); // Empty dependency array ensures useEffect only runs once after component mounts
+
   return (
     <div>
       <div className="App--header">
@@ -57,12 +75,22 @@ function Result() {
         </div>
       </div>
       <div className="App--hero">
-        <div>
-          <Lottie options={defaultOptions2} height={300} width={300} />
+        <div style={{ paddingLeft: "80px" }}>
+          <Lottie options={defaultOptions2} height={300} width={350} />
         </div>
       </div>
       <div className="App--main">
         <h3>Your Breed Results:</h3>
+        {matchedCategories.map((row, index) => (
+          <div key={index}>
+            <h2>{row.name}</h2>
+            <img
+              className="App--main__resultPic"
+              src={row.image}
+              alt={row.name}
+            />
+          </div>
+        ))}
       </div>
       <div className="App--main">
         <p>DOG FACT</p>

@@ -102,9 +102,15 @@ function Questionnaire() {
         "http://localhost:8080/compare",
         userResponses
       );
+      console.log(response.data.matchedCategories);
       // Navigate to the result page based on the backend response
-      if (response.data.match) {
-        navigate("/result");
+      if (
+        response.data.matchedCategories &&
+        response.data.matchedCategories.length > 0
+      ) {
+        navigate(
+          `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
+        );
       } else {
         console.log("User responses don't match database.");
       }
@@ -126,8 +132,12 @@ function Questionnaire() {
                 alt={`Answer ${index + 1}`}
               />
             )}
-            <p>{answer}</p>
-            <button onClick={() => handleAnswerClick(answer)}>Select</button>
+            <button
+              onClick={() => handleAnswerClick(answer)}
+              className="answer-button"
+            >
+              {answer}
+            </button>
           </div>
         ))}
       </div>
