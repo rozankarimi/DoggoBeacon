@@ -4,6 +4,8 @@ import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import animationData2 from "../../lotties/Animation -Slipper.json";
 import { useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
+// import axios from "axios";
 
 function Result() {
   const navigate = useNavigate();
@@ -23,6 +25,19 @@ function Result() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  // useEffect(() => {
+  //   fetchDogFacts();
+  // });
+
+  // async function fetchDogFacts() {
+  //   try {
+  //     const res = await axios.get("http://localhost:8080/result");
+  //   } catch (error) {
+  //     console.error("Failed to fetch inventories:", error);
+  //   }
+  // }
+
   return (
     <div>
       <div className="App--header">
@@ -44,6 +59,10 @@ function Result() {
       <div className="App--main">
         <h3>Your Breed Results:</h3>
       </div>
+      <div>
+        <p>Dogg Fact</p>
+      </div>
+
       <button onClick={() => navigate("/")} className="button">
         DONE
       </button>
