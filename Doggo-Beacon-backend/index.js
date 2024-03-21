@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 
 const factorsRoutes = require("./routes/factors");
 const resultRoutes = require("./routes/results");
+const compareRoutes = require("./routes/comparison");
 
 const cors = require("cors");
 
@@ -15,8 +16,16 @@ app.use(express.json());
 
 // Routes
 app.use("/home", factorsRoutes);
-// app.use("/breed", factorsRoutes);
 app.use("/result", resultRoutes);
+app.use("/compare", compareRoutes);
+
+app.get("/db", (req, res) => {
+  res.send("Database testing");
+});
+
+// app.post("/compare", (req, res) => {
+//   res.send("Post testing");
+// });
 
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT}`);
