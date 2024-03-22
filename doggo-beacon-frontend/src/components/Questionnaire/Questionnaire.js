@@ -109,6 +109,7 @@ function Questionnaire() {
         "http://localhost:8080/compare",
         userResponses
       );
+      console.log(response.data);
       console.log(response.data.matchedCategories);
       // Navigate to the result page based on the backend response
       if (
