@@ -116,7 +116,8 @@ function Questionnaire() {
         response.data.matchedCategories.length > 0
       ) {
         navigate(
-          `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
+          "/result"
+          // `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
         );
       } else {
         console.log("User responses don't match database.");
@@ -131,12 +132,7 @@ function Questionnaire() {
       <h4>{currentQuestion.question}</h4>
       <div className="hero__box--questioner">
         {currentQuestion.answers.map((answer, index) => (
-          <div
-            key={index}
-            className={`answer-container ${
-              index === 0 || index === 1 ? "wide-image" : ""
-            }`}
-          >
+          <div key={index} className={"answer-container"}>
             {currentQuestion.image[index] && (
               <img
                 src={currentQuestion.image[index]}

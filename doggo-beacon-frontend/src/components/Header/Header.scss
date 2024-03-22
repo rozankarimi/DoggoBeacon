@@ -1,6 +1,9 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
-@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+$desktop-width: 1280px;
 
 *{
     font-family: $font-regular;
@@ -36,6 +39,9 @@
     width: 540px;
     height: 278px;
     transform: scaleX(0.85) scaleY(0.75);
+    // @include desktop{
+    //    width: 100%; 
+    // }
 }
 hr{
     background-color: $light-Brown;

@@ -80,7 +80,7 @@ function Result() {
         </div>
       </div>
       <div className="App--main">
-        <h3>Your Breed Results:</h3>
+        <h3>Here is your Breed Matches:</h3>
         {matchedCategories.map((row, index) => (
           <div key={index}>
             <h2>{row.name}</h2>
