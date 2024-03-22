@@ -5,16 +5,19 @@ import Apartment from "../../assets/images/Apartment.jpeg";
 import House from "../../assets/images/House.jpeg";
 import indoor from "../../assets/images/Indoor.png";
 import Walk from "../../assets/images/Walk2.jpeg";
+import longWalk from "../../assets/images/LongWalk.jpeg";
 import lessHour from "../../assets/images/Less than an hour.png";
 import fourhour from "../../assets/images/4.jpeg";
 import eighthour from "../../assets/images/8.jpeg";
-import shed from "../../assets/images/Shedding.jpeg";
+import shedNo from "../../assets/images/Shedding.jpeg";
+import shedYes from "../../assets/images/SheddingYes.jpeg";
 import HellNo from "../../assets/images/HellNo.png";
 import basic from "../../assets/images/basic.png";
 import advance from "../../assets/images/Advancedtraining.png";
 import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
+import grooming2 from "../../assets/images/Grooming.jpeg";
 import weight from "../../assets/images/Wiegth.jpeg";
-import bark from "../../assets/images/Bark2.jpeg";
+import barkNone from "../../assets/images/BarkNone.jpeg";
 import axios from "axios";
 
 function Questionnaire() {
@@ -32,7 +35,7 @@ function Questionnaire() {
       category: "playfulness",
       question: "How much will your dog be able to play with you?",
       answers: ["ONLY INDOOR PLAY", "SHORT WALK", "OCCASIONAL LONG WALK"],
-      image: [indoor, Walk],
+      image: [indoor, Walk, longWalk],
     },
     {
       order: 2,
@@ -46,7 +49,7 @@ function Questionnaire() {
       category: "shedding",
       question: "Is Shedding OK?",
       answers: ["YES", "NO"],
-      image: [shed],
+      image: [shedYes, shedNo],
     },
     {
       order: 4,
@@ -60,7 +63,7 @@ function Questionnaire() {
       category: "grooming",
       question: "How often are you willing to groom the Dog?",
       answers: ["DAILY", "WEEKLY", "OCCASIONALLY"],
-      image: [grooming],
+      image: [grooming, grooming2, grooming],
     },
     {
       order: 6,
@@ -74,7 +77,7 @@ function Questionnaire() {
       category: "bark",
       question: "How much barking can you tolerate?", //key
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "], //value
-      image: [bark],
+      image: [barkNone],
     },
   ]);
 
