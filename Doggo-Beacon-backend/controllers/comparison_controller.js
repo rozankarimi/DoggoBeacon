@@ -15,86 +15,86 @@ const matchCriteria = async (req, res) => {
       .select("*")
       .where((builder) => {
         // Filter based on user input
-        if (userInput.answers === "APARTMENT") {
+        if (userInput.height === "APARTMENT") {
           console.log("Applying category filter: APARTMENT");
           builder.whereBetween("height", [0, 20]);
-        } else if (userInput.answers === "HOUSE") {
+        } else if (userInput.height === "HOUSE") {
           console.log("Applying category filter: HOUSE");
           builder.where("height", ">=", 20);
         }
 
-        if (userInput.answers === "ONLY INDOOR PLAY") {
+        if (userInput.playfulness === "ONLY INDOOR PLAY") {
           console.log(
             "make sure this is called when the user clicks only indoor play"
           );
           builder.andWhere("playfulness", 3);
-        } else if (userInput.answers === "SHORT WALK") {
+        } else if (userInput.playfulness === "SHORT WALK") {
           console.log("Applying category filter: SHORT WALK");
           builder.andWhere("playfulness", 4);
-        } else if (userInput.answers === "OCCASIONAL LONG WALK") {
+        } else if (userInput.playfulness === "OCCASIONAL LONG WALK") {
           console.log("Applying category filter: Occasional long walk");
           builder.andWhere("playfulness", 5);
         }
 
-        if (userInput.answers === "< 1 HOUR") {
+        if (userInput.energy === "< 1 HOUR") {
           console.log("Applying category filter: 1 hour");
           builder.andWhere("energy", 3);
-        } else if (userInput.answers === "4 HOURS") {
+        } else if (userInput.energy === "4 HOURS") {
           console.log("Applying category filter: 4 hours");
           builder.andWhere("energy", 4);
-        } else if (userInput.answers === " > 8 HOURS") {
+        } else if (userInput.energy === " > 8 HOURS") {
           console.log("Applying category filter: 8 hours");
           builder.andWhere("energy", 5);
         }
 
-        if (userInput.answers === "yes") {
-          builder.andWhereIn("shedding", [5, 4, 3, 2]);
+        if (userInput.shedding === "yes") {
+          builder.whereIn("shedding", [5, 4, 3, 2]);
           console.log("Applying category filter: yes");
         } else {
           console.log("Applying category filter: no sheeed");
           builder.andWhere("shedding", 1);
         }
 
-        if (userInput.answers === "NONE") {
+        if (userInput.training === "NONE") {
           console.log("Applying category filter: NONE");
           builder.andWhere("trainability", "<=", 3);
-        } else if (userInput.answers === "BASIC") {
+        } else if (userInput.training === "BASIC") {
           console.log("Applying category filter: BASIC");
           builder.andWhere("trainability", 4);
-        } else if (userInput.answers === "ADVANCED") {
+        } else if (userInput.training === "ADVANCED") {
           console.log("Applying category filter: ADVANCED");
           builder.andWhere("trainability", 5);
         }
 
-        if (userInput.answers === "DAILY") {
+        if (userInput.grooming === "DAILY") {
           console.log("Applying category filter: DAILY");
           builder.andWhere("grooming", 4);
-        } else if (userInput.answers === "WEEKLY") {
+        } else if (userInput.grooming === "WEEKLY") {
           console.log("Applying category filter: WEEKLY");
           builder.andWhere("grooming", 3);
-        } else if (userInput.answers === "OCCASIONALLY") {
+        } else if (userInput.grooming === "OCCASIONALLY") {
           console.log("Applying category filter: OCCASIONALLY");
-          builder.andWhereIn("grooming", [1, 2]);
+          builder.whereIn("grooming", [1, 2]);
         }
 
-        if (userInput.answers === "20 LBS OR UNDER") {
+        if (userInput.weight === "20 LBS OR UNDER  ") {
           console.log("Applying category filter:  < 20");
           builder.whereBetween("weight", [0, 20]);
-        } else if (userInput.answers === "20-50 LBS") {
+        } else if (userInput.weight === "20-50 LBS ") {
           console.log("Applying category filter: 20-50");
           builder.whereBetween("weight", [20, 50]);
-        } else if (userInput.answers === "50 LBS OR MORE") {
+        } else if (userInput.weight === "50 LBS OR MORE") {
           console.log("Applying category filter: > 50");
           builder.where("weight", ">", 50);
         }
 
-        if (userInput.answers === "NONE") {
+        if (userInput.bark === "NONE") {
           console.log("Applying category filter: NONE");
           builder.andWhere("barking", 1);
-        } else if (userInput.answers === "SOME BARKING IS OK") {
+        } else if (userInput.bark === "SOME BARKING IS OK ") {
           console.log("Applying category filter: Some is ok");
-          builder.andWhereIn("barking", [2, 3]);
-        } else if (userInput.answers === "BARKING IS NOT AN ISSUE") {
+          builder.whereIn("barking", [2, 3]);
+        } else if (userInput.bark === "BARKING IS NOT AN ISSUE  ") {
           console.log("Applying category filter: Not an issue");
           builder.andWhere("barking", 5);
         }
