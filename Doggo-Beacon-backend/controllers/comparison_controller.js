@@ -36,7 +36,7 @@ const matchCriteria = async (req, res) => {
           builder.andWhere("playfulness", 5);
         }
 
-        if (userInput.energy === "< 1 HOUR") {
+        if (userInput.energy === " < 1 HOUR") {
           console.log("Applying category filter: 1 hour");
           builder.andWhere("energy", 3);
         } else if (userInput.energy === "4 HOURS") {
@@ -47,10 +47,10 @@ const matchCriteria = async (req, res) => {
           builder.andWhere("energy", 5);
         }
 
-        if (userInput.shedding === "yes") {
+        if (userInput.shedding === "YES") {
           builder.whereIn("shedding", [5, 4, 3, 2]);
           console.log("Applying category filter: yes");
-        } else {
+        } else if (userInput.shedding === "NO") {
           console.log("Applying category filter: no sheeed");
           builder.andWhere("shedding", 1);
         }
@@ -102,6 +102,8 @@ const matchCriteria = async (req, res) => {
 
     // Extract matched categories from the result
     criteria.forEach((row) => {
+      console.log(row);
+      console.log(matchedCategories);
       matchedCategories.push({ name: row.name, image: row.image_link });
     });
 
