@@ -16,8 +16,12 @@ import basic from "../../assets/images/basic.png";
 import advance from "../../assets/images/Advancedtraining.png";
 import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
 import grooming2 from "../../assets/images/Grooming.jpeg";
-import weight from "../../assets/images/Wiegth.jpeg";
+import weight1 from "../../assets/images/20LBS.jpeg";
+import weight2 from "../../assets/images/20-50.jpeg";
+import weight3 from "../../assets/images/50LBS.jpeg";
 import barkNone from "../../assets/images/BarkNone.jpeg";
+import medBark from "../../assets/images/MedBark.jpeg";
+import highBark from "../../assets/images/HighBark.jpeg";
 import axios from "axios";
 
 function Questionnaire() {
@@ -70,14 +74,14 @@ function Questionnaire() {
       category: "weight",
       question: "How big or small your new dog be?",
       answers: ["20 LBS OR UNDER  ", "20-50 LBS ", "50 LBS OR MORE"],
-      image: [weight],
+      image: [weight1, weight2, weight3],
     },
     {
       order: 7,
       category: "bark",
       question: "How much barking can you tolerate?", //key
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "], //value
-      image: [barkNone],
+      image: [barkNone, medBark, highBark],
     },
   ]);
 
