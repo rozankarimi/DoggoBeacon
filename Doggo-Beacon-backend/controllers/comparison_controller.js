@@ -24,9 +24,7 @@ const matchCriteria = async (req, res) => {
         }
 
         if (userInput.playfulness === "ONLY INDOOR PLAY") {
-          console.log(
-            "make sure this is called when the user clicks only indoor play"
-          );
+          console.log("Applying category filter: only indoor play");
           builder.andWhere("playfulness", 3);
         } else if (userInput.playfulness === "SHORT WALK") {
           console.log("Applying category filter: SHORT WALK");
@@ -97,6 +95,7 @@ const matchCriteria = async (req, res) => {
         } else if (userInput.bark === "BARKING IS NOT AN ISSUE  ") {
           console.log("Applying category filter: Not an issue");
           builder.andWhere("barking", 5);
+          debugger;
         }
       });
 

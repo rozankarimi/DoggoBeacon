@@ -65,18 +65,28 @@ function Result() {
     <div>
       <div className="App--header">
         <div className="App--header__logo">
-          <img className="logoImage" src={siteLogo} alt="siteLog" />
+          <img className="logoImageHeader" src={siteLogo} alt="siteLog" />
         </div>
         <div className="App--header__text">
           <h1>Doggo Beacon</h1>
         </div>
-        <div>
-          <Lottie options={defaultOptions} height={80} width={80} />
+        <div className="lottie-container">
+          <Lottie
+            options={defaultOptions}
+            height={90}
+            width={90}
+            className="lottie-animation"
+          />
         </div>
       </div>
       <div className="App--hero">
-        <div style={{ paddingLeft: "80px" }}>
-          <Lottie options={defaultOptions2} height={300} width={350} />
+        <div style={{ paddingLeft: "80px" }} className="lottie-container2">
+          <Lottie
+            options={defaultOptions2}
+            height={300}
+            width={350}
+            className="lottie-animation2"
+          />
         </div>
       </div>
       <div className="App--main">
@@ -93,7 +103,7 @@ function Result() {
         ))}
       </div>
       <div className="App--main">
-        <p>DOG FACT</p>
+        <h4>DOG FACT</h4>
         <p>{randomFact}</p>
       </div>
 

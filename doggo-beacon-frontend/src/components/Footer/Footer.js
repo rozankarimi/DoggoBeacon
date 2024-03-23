@@ -17,7 +17,7 @@ class Footer extends Component {
           <div className="App--footer__logo">
             <img className="logoImageFooter" src={siteLogo} alt="siteLog" />
           </div>
-          <div>
+          <div className="App--footer__follow">
             <h3 className="subFooter"> FOLLOW US</h3>
             <div className="App--footer__logo">
               <a href="https://www.facebook.com/">
