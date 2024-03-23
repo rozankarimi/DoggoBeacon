@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Result() {
+function Result({ compelted, setCompelted }) {
   const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
@@ -60,7 +60,11 @@ function Result() {
 
     fetchMatchedCategories();
   }, []); // Empty dependency array ensures useEffect only runs once after component mounts
-
+  function compeletedQ() {
+    navigate("/");
+    setCompelted(false);
+    setMatchedCategories([]);
+  }
   return (
     <div>
       <div className="App--header">
@@ -107,7 +111,7 @@ function Result() {
         <p>{randomFact}</p>
       </div>
 
-      <button onClick={() => navigate("/")} className="button">
+      <button onClick={() => compeletedQ()} className="button">
         DONE
       </button>
     </div>

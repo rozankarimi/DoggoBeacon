@@ -4,11 +4,11 @@ import Footer from "../../components/Footer/Footer";
 import Questionnaire from "../../components/Questionnaire/Questionnaire";
 import React from "react";
 
-export default function HomePage() {
+export default function HomePage({ compelted, setCompelted }) {
   return (
     <div>
       <Header />
-      <Questionnaire />
+      <Questionnaire compelted={compelted} setCompelted={setCompelted} />
       <Footer />
     </div>
   );
