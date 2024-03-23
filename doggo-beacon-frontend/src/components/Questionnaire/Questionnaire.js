@@ -126,7 +126,11 @@ function Questionnaire() {
       console.error("Error:", error);
     }
   };
-  const currentQuestion = questions[currentQuestionIndex];
+  // const currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion =
+    questions.length > 0 ? questions[currentQuestionIndex] : null;
+
+  // const currentQuestion = questions[currentQuestionIndex];
   return (
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
