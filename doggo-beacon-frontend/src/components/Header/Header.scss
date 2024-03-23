@@ -3,8 +3,6 @@
 @use "../../styles/partials/mixins" as *;
 
 
-$desktop-width: 1280px;
-
 *{
     font-family: $font-regular;
     font-size: large;
@@ -13,35 +11,59 @@ $desktop-width: 1280px;
 .App--header{
     display: flex;
     padding-top: 15px;
-    justify-content: space-evenly;
+    justify-content: space-evenly; 
     &__logo{
         height: 52px;
         padding-top: 10px;
         padding-left: 0;
+        @include desktop{
+            width: 5%; 
+            padding-left: 0;
+        }
     }
     
     &__text{
         color: $medium-Brown;
-    }
+    }   
     &__menu{
         padding-top: 30px;
     }
+   
+    @include desktop{
+        padding-left: 4rem;
+        justify-content: space-between;
+    }
+    
+   
 }
+
 .App--hero{
     width: 200px;
     height: 250px;
+    @include desktop{
+        width: 100%;
+        height: 40%; 
+    }
 }
-.logoImage{
-    width: 56px;
+.logoImageHeader{
+    width: 100%;
     height: 52px;
+    @include desktop{
+        width: 150px;
+        height: 120px;
+        padding-left: 0;
+        border-left: 0;
+    }
 }
 .heroImage{
     width: 540px;
     height: 278px;
     transform: scaleX(0.85) scaleY(0.75);
-    // @include desktop{
-    //    width: 100%; 
-    // }
+    @include desktop{
+       width: 20%; 
+       height: 30%;
+       transform: scaleX(3.6) scaleY(0.95);
+    }
 }
 hr{
     background-color: $light-Brown;
@@ -51,5 +73,23 @@ hr{
 }
 h1{
     font-size: 30px;
+    @include desktop{
+        font-size: 50px;
+    }
 
+}
+.lottie-container{
+    @include desktop{
+        padding-right: 4rem;
+        width: 190px;
+        height: 120px;
+        
+    }
+    
+}
+.lottie-animation{
+    @include desktop{
+        width: 100px;
+        height: 100px;
+    }
 }

@@ -2,8 +2,12 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-h3{
+h3,h2{
     color: $regular-Brown;
+    font-size: 20px;
+    @include desktop{
+        font-size: 25px
+    }
 }
 .App--main{
     width: 90%;
@@ -11,5 +15,47 @@ h3{
     text-align: center;
     &__resultPic{
         width: 100%;
+        @include desktop{
+            width: 900px;
+        }
     }
+}
+.lottie-container{
+    @include desktop{
+        padding-right: 4rem;
+        width: 190px;
+        height: 120px;
+    } 
+}
+
+.lottie-container2{
+    width: 200px;
+    height: 250px;
+    @include desktop{
+        padding-left: 14rem;
+        width: 1200px;
+        height: 300px;
+    }  
+}
+h4{
+    font-size: 20px;
+    @include desktop{
+        font-size: 25px;
+    }
+}
+p{
+    font-size: 20px;
+    @include desktop{
+        font-size: 25px
+    }
+}
+.button{
+    width: 15%;
+    font-size: 20px;
+    @include desktop{
+        width: 6%;
+        border-radius: 5px;
+        font-size: 25px;
+    }
+
 }
