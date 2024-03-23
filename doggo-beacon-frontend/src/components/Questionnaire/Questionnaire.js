@@ -6,7 +6,7 @@ import House from "../../assets/images/House.jpeg";
 import indoor from "../../assets/images/Indoor.png";
 import Walk from "../../assets/images/Walk2.jpeg";
 import longWalk from "../../assets/images/LongWalk.jpeg";
-import lessHour from "../../assets/images/Less than an hour.png";
+import lessHour from "../../assets/images/hour.jpg";
 import fourhour from "../../assets/images/4.jpeg";
 import eighthour from "../../assets/images/8.jpeg";
 import shedNo from "../../assets/images/Shedding.jpeg";
@@ -15,7 +15,6 @@ import HellNo from "../../assets/images/HellNo.png";
 import basic from "../../assets/images/basic.png";
 import advance from "../../assets/images/Advancedtraining.png";
 import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
-import grooming2 from "../../assets/images/Grooming.jpeg";
 import weight1 from "../../assets/images/20LBS.jpeg";
 import weight2 from "../../assets/images/20-50.jpeg";
 import weight3 from "../../assets/images/50LBS.jpeg";
@@ -67,7 +66,7 @@ function Questionnaire() {
       category: "grooming",
       question: "How often are you willing to groom the Dog?",
       answers: ["DAILY", "WEEKLY", "OCCASIONALLY"],
-      image: [grooming, grooming2, grooming],
+      image: [grooming, grooming, grooming],
     },
     {
       order: 6,

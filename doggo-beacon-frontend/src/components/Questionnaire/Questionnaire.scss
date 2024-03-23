@@ -37,8 +37,12 @@ margin-bottom: 10px;
     color: $regular-Brown;
     background-color: rgb(203, 192, 177);
     border-radius: 10px;
+    width: 70%;
+    font-size: 20px;
+    @include desktop{
+        width: 95%;
+        border-radius: 5px;
+        font-size: 25px;
+    }
     
 }
-// .wide-image{
-//     width: 80%;
-// }
