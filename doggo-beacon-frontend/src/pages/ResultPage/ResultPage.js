@@ -3,10 +3,10 @@ import Result from "../../components/Result/Result";
 import Footer from "../../components/Footer/Footer";
 import React from "react";
 
-export default function ResultPage({ compelted, setCompelted }) {
+export default function ResultPage({ completed, setCompleted }) {
   return (
     <div>
-      <Result compelted={compelted} setCompelted={setCompelted} />
+      <Result completed={completed} setCompleted={setCompleted} />
       <Footer />
     </div>
   );

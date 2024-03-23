@@ -23,7 +23,7 @@ import medBark from "../../assets/images/MedBark.jpeg";
 import highBark from "../../assets/images/HighBark.jpeg";
 import axios from "axios";
 
-function Questionnaire({ compelted, setCompelted }) {
+function Questionnaire({ completed, setCompleted }) {
   const navigate = useNavigate();
 
   const [questions, setQuestions] = useState([
@@ -116,10 +116,10 @@ function Questionnaire({ compelted, setCompelted }) {
         response.data.matchedCategories &&
         response.data.matchedCategories.length > 0
       ) {
-        setCompelted(true);
+        setCompleted(true);
         navigate(
-          "/result"
-          // `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
+          // "/result"
+          `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
         );
       } else {
         console.log("User responses don't match database.");

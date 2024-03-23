@@ -5,7 +5,7 @@ import ResultPage from "./pages/ResultPage/ResultPage";
 import { useState } from "react";
 
 function App() {
-  const [compelted, setCompelted] = useState(false);
+  const [completed, setCompleted] = useState(false);
   return (
     <div className="App">
       <BrowserRouter>
@@ -13,13 +13,13 @@ function App() {
           <Route
             path="/"
             element={
-              <HomePage compelted={compelted} setCompelted={setCompelted} />
+              <HomePage completed={completed} setCompleted={setCompleted} />
             }
           />
           <Route
             path="/result"
             element={
-              <ResultPage compelted={compelted} setCompelted={setCompelted} />
+              <ResultPage completed={completed} setCompleted={setCompleted} />
             }
           />
         </Routes>

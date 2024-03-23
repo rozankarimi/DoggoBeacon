@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Result({ compelted, setCompelted }) {
+function Result({ completed, setCompleted }) {
   const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
@@ -62,7 +62,7 @@ function Result({ compelted, setCompelted }) {
   }, []); // Empty dependency array ensures useEffect only runs once after component mounts
   function compeletedQ() {
     navigate("/");
-    setCompelted(false);
+    setCompleted(false);
     setMatchedCategories([]);
   }
   return (
