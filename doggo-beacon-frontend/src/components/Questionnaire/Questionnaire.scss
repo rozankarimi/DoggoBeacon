@@ -1,0 +1,48 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.hero__box{
+    color: $regular-Brown;
+    &--questioner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
+.button{
+    border-radius: 15%;
+    background-color: rgba(178, 115, 13, 0.823);
+    color: $regular-Brown;
+    font-weight: 200;
+    &--box{
+        padding-top: 14px;
+    }
+}
+
+.answer-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.question-image {
+width: 100%; /* Ensures the image fills its container */
+max-width: 200px; 
+height: auto;
+margin-bottom: 10px;
+}
+.answer-button{
+    color: $regular-Brown;
+    background-color: rgb(203, 192, 177);
+    border-radius: 10px;
+    width: 70%;
+    font-size: 20px;
+    @include desktop{
+        width: 95%;
+        border-radius: 5px;
+        font-size: 25px;
+    }
+    
+}

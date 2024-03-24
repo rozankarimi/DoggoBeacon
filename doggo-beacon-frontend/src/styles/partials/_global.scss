@@ -1,3 +1,5 @@
 @use './variables' as *;
-@use './mixins' as *;
-@use 'fonts';
+@import './mixins' ;
+@use './fonts';
+
+
