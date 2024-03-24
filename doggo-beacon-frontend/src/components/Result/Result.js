@@ -33,7 +33,7 @@ function Result({ completed, setCompleted }) {
       try {
         const randomIndex = Math.floor(Math.random() * 21);
         const response = await axios.get("http://localhost:8080/result");
-        console.log(response);
+        // console.log(response);
         setRandomFact(response.data[randomIndex].description);
       } catch (error) {
         console.error("Error fetching random dog fact:", error);
@@ -44,6 +44,10 @@ function Result({ completed, setCompleted }) {
   }, []);
 
   const [matchedCategories, setMatchedCategories] = useState([]);
+  const extractedData = matchedCategories.map(({ name, image_link }) => ({
+    name,
+    image_link,
+  }));
 
   useEffect(() => {
     // Make an API call to fetch matched categories from the backend
@@ -95,6 +99,19 @@ function Result({ completed, setCompleted }) {
       </div>
       <div className="App--main">
         <h3>Here is your Breed Matches:</h3>
+        {/* {matchedCategories.map((name, image_link) => (
+          <div>
+            <h2>{name}</h2>
+            <img className="App--main__resultPic" src={image_link} alt={name} />
+          </div>
+        ))} */}
+        {extractedData.map((name, image_link) => (
+          <div>
+            <h2>{name}</h2>
+            <img className="App--main__resultPic" src={image_link} alt={name} />
+          </div>
+        ))}
+        {/* 
         {matchedCategories.map((row, index) => (
           <div key={index}>
             <h2>{row.name}</h2>
@@ -104,7 +121,7 @@ function Result({ completed, setCompleted }) {
               alt={row.name}
             />
           </div>
-        ))}
+        ))} */}
       </div>
       <div className="App--main">
         <h4>DOG FACT</h4>

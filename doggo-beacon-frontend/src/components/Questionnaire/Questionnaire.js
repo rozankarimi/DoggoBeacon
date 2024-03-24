@@ -25,7 +25,6 @@ import axios from "axios";
 
 function Questionnaire({ completed, setCompleted }) {
   const navigate = useNavigate();
-
   const [questions, setQuestions] = useState([
     {
       order: 0,
@@ -110,6 +109,7 @@ function Questionnaire({ completed, setCompleted }) {
         userResponses
       );
       console.log(response.data);
+
       console.log(response.data.matchedCategories);
       // Navigate to the result page based on the backend response
       if (
@@ -117,10 +117,10 @@ function Questionnaire({ completed, setCompleted }) {
         response.data.matchedCategories.length > 0
       ) {
         setCompleted(true);
-        navigate(
-          // "/result"
-          `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`
-        );
+        navigate("/result", {
+          matchedCategories: response.data.matchedCategories[0],
+        });
+        // `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`;
       } else {
         console.log("User responses don't match database.");
       }
@@ -128,11 +128,8 @@ function Questionnaire({ completed, setCompleted }) {
       console.error("Error:", error);
     }
   };
-  // const currentQuestion = questions[currentQuestionIndex];
   const currentQuestion =
     questions.length > 0 ? questions[currentQuestionIndex] : null;
-
-  // const currentQuestion = questions[currentQuestionIndex];
   return (
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
