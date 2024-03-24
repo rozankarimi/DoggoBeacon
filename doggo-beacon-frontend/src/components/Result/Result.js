@@ -3,12 +3,13 @@ import Lottie from "react-lottie";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import animationData2 from "../../lotties/Animation -Slipper.json";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Result({ completed, setCompleted }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -44,30 +45,13 @@ function Result({ completed, setCompleted }) {
   }, []);
 
   const [matchedCategories, setMatchedCategories] = useState([]);
-  const extractedData = matchedCategories.map(({ name, image_link }) => ({
-    name,
-    image_link,
-  }));
 
   useEffect(() => {
-    // Make an API call to fetch matched categories from the backend
-    const fetchMatchedCategories = async () => {
-      try {
-        const response = await axios.post("http://localhost:8080/compare");
-        // Extract matched categories from the response data
-        const categories = response.data.matchedCategories;
-        setMatchedCategories(categories);
-      } catch (error) {
-        console.error("Error fetching matched categories:", error);
-      }
-    };
-
-    fetchMatchedCategories();
+    setMatchedCategories(location.state.matchedCategories);
   }, []); // Empty dependency array ensures useEffect only runs once after component mounts
   function compeletedQ() {
     navigate("/");
     setCompleted(false);
-    setMatchedCategories([]);
   }
   return (
     <div>
@@ -99,29 +83,16 @@ function Result({ completed, setCompleted }) {
       </div>
       <div className="App--main">
         <h3>Here is your Breed Matches:</h3>
-        {/* {matchedCategories.map((name, image_link) => (
+        {matchedCategories.map((dog) => (
           <div>
-            <h2>{name}</h2>
-            <img className="App--main__resultPic" src={image_link} alt={name} />
-          </div>
-        ))} */}
-        {extractedData.map((name, image_link) => (
-          <div>
-            <h2>{name}</h2>
-            <img className="App--main__resultPic" src={image_link} alt={name} />
-          </div>
-        ))}
-        {/* 
-        {matchedCategories.map((row, index) => (
-          <div key={index}>
-            <h2>{row.name}</h2>
+            <h2>{dog.name}</h2>
             <img
               className="App--main__resultPic"
-              src={row.image}
-              alt={row.name}
+              src={dog.image_link}
+              alt={dog.name}
             />
           </div>
-        ))} */}
+        ))}
       </div>
       <div className="App--main">
         <h4>DOG FACT</h4>

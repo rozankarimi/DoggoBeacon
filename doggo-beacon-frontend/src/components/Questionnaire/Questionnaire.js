@@ -118,9 +118,8 @@ function Questionnaire({ completed, setCompleted }) {
       ) {
         setCompleted(true);
         navigate("/result", {
-          matchedCategories: response.data.matchedCategories[0],
+          state: { matchedCategories: response.data.matchedCategories },
         });
-        // `/result?name=${response.data.matchedCategories[0].name}&image=${response.data.matchedCategories[0].image}`;
       } else {
         console.log("User responses don't match database.");
       }
