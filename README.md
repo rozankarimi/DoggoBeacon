@@ -1,6 +1,6 @@
-🐶🐾Doggo Beacon🐾🐶
+🐶🐾# Doggo-Beacon🐾🐶
 
-Web App for finding the Best Dog Breed
+Doggo Beacon is a web app that help dog lovers to find the best breed based on their living situation.
 
 ## Tech Stack
 
@@ -38,7 +38,10 @@ Back-End:
 .env
 .env.sample in zoomie-backend provides a sample of environment variables required to run this project. You will need to add the following environment variables to your .env file:
 
-PORT DB_LOCAL_DBNAME DB_LOCAL_USER DB_LOCAL_PASSWORD
+PORT 
+DB_LOCAL_DBNAME 
+DB_LOCAL_USER 
+DB_LOCAL_PASSWORD
 
 # Doggo-Beacon
 
