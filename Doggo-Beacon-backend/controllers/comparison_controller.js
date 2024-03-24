@@ -82,7 +82,6 @@ const matchCriteria = async (req, res) => {
           }).length == 0
         );
       });
-      // console.log(filteredArray2);
     } else if (userInput.energy === "4 HOURS") {
       console.log("Applying category filter: 4 hours");
       energyFac = await knex
@@ -180,7 +179,6 @@ const matchCriteria = async (req, res) => {
           }).length == 0
         );
       });
-      // console.log(filteredArray4);
     }
 
     let groomFac;
@@ -314,7 +312,6 @@ const matchCriteria = async (req, res) => {
       name,
       image_link,
     }));
-    console.log(extractedData);
 
     // Remove duplicate categories from matchedCategories if needed
     const uniqueMatchedCategories = [...new Set(matchedCategories)];
