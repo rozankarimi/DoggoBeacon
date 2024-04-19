@@ -6,6 +6,7 @@
     color: $regular-Brown;
     &--questioner{
         display: flex;
+        width: 100%;
         justify-content: space-around;
         align-items: center;
         margin-top: 20px;
@@ -23,8 +24,10 @@
 
 .answer-container {
 display: flex;
+// width: 50%;
 flex-direction: column;
-align-items: center;
+align-items:baseline;
+// align-items: center;
 }
 
 .question-image {
@@ -37,7 +40,8 @@ margin-bottom: 10px;
     color: $regular-Brown;
     background-color: rgb(203, 192, 177);
     border-radius: 10px;
-    width: 70%;
+    // width: 70%;
+    width: 100%;
     font-size: 20px;
     @include desktop{
         width: 95%;
@@ -46,3 +50,7 @@ margin-bottom: 10px;
     }
     
 }
+// img{
+//     width: 200px;
+//     height: 133px;
+// }

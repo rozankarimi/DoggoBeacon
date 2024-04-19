@@ -83,6 +83,7 @@ function Result({ completed, setCompleted }) {
       </div>
       <div className="App--main">
         <h3>Here is your Breed Matches:</h3>
+        <hr />
         {matchedCategories.map((dog) => (
           <div>
             <h2>{dog.name}</h2>
@@ -94,6 +95,7 @@ function Result({ completed, setCompleted }) {
           </div>
         ))}
       </div>
+      <hr />
       <div className="App--main">
         <h4>DOG FACT</h4>
         <p>{randomFact}</p>
