@@ -23,6 +23,17 @@ app.get("/db", (req, res) => {
   res.send("Database testing");
 });
 
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../doggo-beacon-frontend/public/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
+
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT}`);
 });
