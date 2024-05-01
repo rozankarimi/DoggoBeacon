@@ -48,10 +48,11 @@ function Result({ completed, setCompleted }) {
 
   useEffect(() => {
     setMatchedCategories(location.state.matchedCategories);
-  }, []); // Empty dependency array ensures useEffect only runs once after component mounts
+  }, [location.state]); // Empty dependency array ensures useEffect only runs once after component mounts
   function compeletedQ() {
     navigate("/");
-    setCompleted(false);
+    setCompleted(true);
+    // setCompleted(false);
   }
   return (
     <div>

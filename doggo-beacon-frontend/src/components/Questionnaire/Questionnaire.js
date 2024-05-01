@@ -25,7 +25,7 @@ import axios from "axios";
 
 function Questionnaire({ completed, setCompleted }) {
   const navigate = useNavigate();
-  const [questions, setQuestions] = useState([
+  const [questions] = useState([
     {
       order: 0,
       category: "height",
@@ -88,20 +88,26 @@ function Questionnaire({ completed, setCompleted }) {
   const [userResponses, setUserResponses] = useState({});
 
   const handleAnswerClick = (answer) => {
-    const questionCategory = questions[currentQuestionIndex].category; // match to category
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionCategory = currentQuestion.category;
+    // const questionCategory = questions[currentQuestionIndex].category; // match to category
 
-    setUserResponses({ ...userResponses, [questionCategory]: answer });
+    // setUserResponses({ ...userResponses, [questionCategory]: answer });
+    setUserResponses((prevResponses) => ({
+      ...prevResponses,
+      [questionCategory]: answer,
+    }));
   };
 
   const nextQuestion = () => {
     if (currentQuestionIndex === questions.length - 1) {
-      sendToBackendAndNavigate();
+      sendToBackendAndNavigate(userResponses);
     } else {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
-  const sendToBackendAndNavigate = async () => {
+  const sendToBackendAndNavigate = async (userResponses) => {
     try {
       // Send userResponses to the backend for comparison with the database
       const response = await axios.post(
@@ -129,6 +135,10 @@ function Questionnaire({ completed, setCompleted }) {
   };
   const currentQuestion =
     questions.length > 0 ? questions[currentQuestionIndex] : null;
+  if (!currentQuestion) {
+    return null; // Or any other rendering for when there are no questions
+  }
+
   return (
     <div className="hero__box">
       <h4>{currentQuestion.question}</h4>
