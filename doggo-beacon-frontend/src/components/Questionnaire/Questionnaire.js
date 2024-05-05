@@ -133,6 +133,7 @@ function Questionnaire({ completed, setCompleted }) {
       console.error("Error:", error);
     }
   };
+
   const currentQuestion =
     questions.length > 0 ? questions[currentQuestionIndex] : null;
   if (!currentQuestion) {
