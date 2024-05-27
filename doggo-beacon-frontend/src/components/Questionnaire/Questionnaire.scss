@@ -32,7 +32,7 @@ align-items:baseline;
 
 .question-image {
 width: 100%; /* Ensures the image fills its container */
-max-width: 200px; 
+max-width: 150px; 
 height: auto;
 margin-bottom: 10px;
 }
@@ -42,6 +42,7 @@ margin-bottom: 10px;
     border-radius: 10px;
     // width: 70%;
     width: 100%;
+    max-width: 150px; 
     font-size: 20px;
     @include desktop{
         width: 95%;
