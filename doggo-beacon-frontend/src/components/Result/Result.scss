@@ -19,6 +19,12 @@ h3,h2{
             width: 900px;
         }
     }
+    &__text{
+        @include desktop{
+            padding: 32px;
+        }
+    }
+    
 }
 .lottie-container{
     @include desktop{
