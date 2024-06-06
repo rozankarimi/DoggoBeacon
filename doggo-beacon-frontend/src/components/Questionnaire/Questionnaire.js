@@ -18,7 +18,8 @@ import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
 import weight1 from "../../assets/images/20LBS.jpeg";
 import weight2 from "../../assets/images/20-50.jpeg";
 import weight3 from "../../assets/images/50LBS.jpeg";
-import barkNone from "../../assets/images/BarkNone.jpeg";
+import testbark from "../../assets/images/testbark.jpeg";
+// import barkNone from "../../assets/images/BarkNone.jpeg";
 import medBark from "../../assets/images/MedBark.jpeg";
 import highBark from "../../assets/images/HighBark.jpeg";
 import axios from "axios";
@@ -80,7 +81,7 @@ function Questionnaire({ completed, setCompleted }) {
       category: "bark",
       question: "How much barking can you tolerate?", //key
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "], //value
-      image: [barkNone, medBark, highBark],
+      image: [testbark, medBark, highBark],
     },
   ]);
 
