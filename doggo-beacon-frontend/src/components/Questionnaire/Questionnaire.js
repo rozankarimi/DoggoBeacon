@@ -18,8 +18,7 @@ import grooming from "../../assets/images/Hairbrush and scissors icon.jpeg";
 import weight1 from "../../assets/images/20LBS.jpeg";
 import weight2 from "../../assets/images/20-50.jpeg";
 import weight3 from "../../assets/images/50LBS.jpeg";
-import testbark from "../../assets/images/testbark.jpeg";
-// import barkNone from "../../assets/images/BarkNone.jpeg";
+import barkNone from "../../assets/images/BarkNone.jpeg";
 import medBark from "../../assets/images/MedBark.jpeg";
 import highBark from "../../assets/images/HighBark.jpeg";
 import axios from "axios";
@@ -81,7 +80,7 @@ function Questionnaire({ completed, setCompleted }) {
       category: "bark",
       question: "How much barking can you tolerate?", //key
       answers: ["NONE", "SOME BARKING IS OK ", "BARKING IS NOT AN ISSUE  "], //value
-      image: [testbark, medBark, highBark],
+      image: [barkNone, medBark, highBark],
     },
   ]);
 
@@ -139,7 +138,8 @@ function Questionnaire({ completed, setCompleted }) {
             {currentQuestion.image[index] && (
               <img
                 src={currentQuestion.image[index]}
-                className="question-image"
+                className={`question-image question-image-${currentQuestionIndex}-${index}`}
+                // className="question-image"
                 alt={`Answer ${index + 1}`}
               />
             )}

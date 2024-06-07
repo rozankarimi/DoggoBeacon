@@ -6,6 +6,8 @@
     color: $regular-Brown;
     &--questioner{
         display: flex;
+        gap: 16px;
+
         width: 100%;
         justify-content: space-around;
         align-items: center;
@@ -29,26 +31,102 @@
 display: flex;
 flex-direction: column;
 align-items:baseline;
-position: relative;
-overflow: hidden;
 }
 
 .question-image {
     width: 100%; /* Ensures the image fills its container */
-    max-width: 150px; 
-    // max-height: 150px;
-    // height: auto;
-    // object-fit: cover;
-   
     margin-bottom: 10px;
+    
+}
 
+.question-image-0-0 {
     @include desktop{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease-in-out;
+    width: 350px;
     }
 }
+.question-image-0-1 {
+    @include desktop{
+    width: 350px;
+    }
+}
+.question-image-1-0 {
+    @include desktop{
+    width: 360px;
+    height: 360px;
+    }
+}
+.question-image-2-0 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-2-1 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-2-2 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-3-0 {
+    @include desktop{
+    width: 300px;
+    height: 180px;
+    }
+}
+.question-image-3-1 {
+    @include desktop{
+    width: 300px;
+    height: 180px;
+    }
+}
+.question-image-4-0 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+
+.question-image-4-1 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+.question-image-4-2 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+
+.question-image-7-0 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+
+.question-image-7-1 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+.question-image-7-2 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+
+        
+    
 .answer-button{
     color: $regular-Brown;
     background-color: rgb(203, 192, 177);
