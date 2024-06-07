@@ -138,7 +138,8 @@ function Questionnaire({ completed, setCompleted }) {
             {currentQuestion.image[index] && (
               <img
                 src={currentQuestion.image[index]}
-                className="question-image"
+                className={`question-image question-image-${currentQuestionIndex}-${index}`}
+                // className="question-image"
                 alt={`Answer ${index + 1}`}
               />
             )}

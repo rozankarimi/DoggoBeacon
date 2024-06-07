@@ -6,10 +6,15 @@
     color: $regular-Brown;
     &--questioner{
         display: flex;
+        gap: 16px;
+
         width: 100%;
         justify-content: space-around;
         align-items: center;
         margin-top: 20px;
+        @include desktop{
+            justify-content: space-evenly;
+        }
     }
 }
 .button{
@@ -24,23 +29,108 @@
 
 .answer-container {
 display: flex;
-// width: 50%;
 flex-direction: column;
 align-items:baseline;
-// align-items: center;
 }
 
 .question-image {
-width: 100%; /* Ensures the image fills its container */
-max-width: 200px; 
-height: auto;
-margin-bottom: 10px;
+    width: 100%; /* Ensures the image fills its container */
+    margin-bottom: 10px;
+    
 }
+
+.question-image-0-0 {
+    @include desktop{
+    width: 350px;
+    }
+}
+.question-image-0-1 {
+    @include desktop{
+    width: 350px;
+    }
+}
+.question-image-1-0 {
+    @include desktop{
+    width: 360px;
+    height: 360px;
+    }
+}
+.question-image-2-0 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-2-1 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-2-2 {
+    @include desktop{
+    width: 380px;
+    height: 190px;
+    }
+}
+.question-image-3-0 {
+    @include desktop{
+    width: 300px;
+    height: 180px;
+    }
+}
+.question-image-3-1 {
+    @include desktop{
+    width: 300px;
+    height: 180px;
+    }
+}
+.question-image-4-0 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+
+.question-image-4-1 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+.question-image-4-2 {
+    @include desktop{
+    width: 380px;
+    height: 380px;
+    }
+}
+
+.question-image-7-0 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+
+.question-image-7-1 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+.question-image-7-2 {
+    @include desktop{
+    width: 250px;
+    height: 250px;
+    }
+}
+
+        
+    
 .answer-button{
     color: $regular-Brown;
     background-color: rgb(203, 192, 177);
     border-radius: 10px;
-    // width: 70%;
     width: 100%;
     font-size: 20px;
     @include desktop{
@@ -50,7 +140,3 @@ margin-bottom: 10px;
     }
     
 }
-// img{
-//     width: 200px;
-//     height: 133px;
-// }
