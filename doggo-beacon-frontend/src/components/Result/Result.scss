@@ -6,7 +6,7 @@ h3,h2{
     color: $regular-Brown;
     font-size: 20px;
     @include desktop{
-        font-size: 25px
+        font-size: 30px
     }
 }
 .App--main{
@@ -19,6 +19,12 @@ h3,h2{
             width: 900px;
         }
     }
+    &__text{
+        @include desktop{
+            margin-left: 24px;
+        }
+    }
+    
 }
 .lottie-container{
     @include desktop{
@@ -40,13 +46,14 @@ h3,h2{
 h4{
     font-size: 20px;
     @include desktop{
-        font-size: 25px;
+        font-size: 30px;
     }
 }
 p{
     font-size: 20px;
     @include desktop{
-        font-size: 25px
+        font-size: 30px;
+        text-align: center;
     }
 }
 .button{
@@ -55,7 +62,7 @@ p{
     @include desktop{
         width: 6%;
         border-radius: 5px;
-        font-size: 25px;
+        font-size: 30px;
     }
 
 }

@@ -96,7 +96,7 @@ function Result({ completed, setCompleted }) {
         ))}
       </div>
       <hr />
-      <div className="App--main">
+      <div className="App--main__text">
         <h4>DOG FACT</h4>
         <p>{randomFact}</p>
       </div>
