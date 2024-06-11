@@ -7,7 +7,6 @@
     &--questioner{
         display: flex;
         gap: 16px;
-
         width: 100%;
         justify-content: space-around;
         align-items: center;
@@ -51,63 +50,111 @@ align-items:baseline;
 }
 .question-image-1-0 {
     @include desktop{
-    width: 360px;
-    height: 360px;
+    width: 300px;
+    height: 280px;
+    }
+}
+.question-image-1-1 {
+    @include desktop{
+    width: 300px;
+    height: 280px;
+    }
+}
+.question-image-1-2 {
+    @include desktop{
+    width: 300px;
+    height: 280px;
     }
 }
 .question-image-2-0 {
     @include desktop{
-    width: 380px;
+    width: 350px;
     height: 190px;
     }
 }
 .question-image-2-1 {
     @include desktop{
-    width: 380px;
+    width: 350px;
     height: 190px;
     }
 }
 .question-image-2-2 {
     @include desktop{
-    width: 380px;
+    width: 350px;
     height: 190px;
     }
 }
 .question-image-3-0 {
     @include desktop{
-    width: 300px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     }
 }
 .question-image-3-1 {
     @include desktop{
-    width: 300px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     }
 }
 .question-image-4-0 {
     @include desktop{
-    width: 380px;
-    height: 380px;
+    width: 250px;
+    height: 250px;
     }
 }
 
 .question-image-4-1 {
     @include desktop{
-    width: 380px;
-    height: 380px;
+    width: 250px;
+    height: 250px;
     }
 }
 .question-image-4-2 {
     @include desktop{
-    width: 380px;
-    height: 380px;
+    width: 250px;
+    height: 250px;
+    }
+}
+.question-image-5-0 {
+    @include desktop{
+    width: 280px;
+    height: 250px;
+    }
+}
+.question-image-5-1 {
+    @include desktop{
+    width: 280px;
+    height: 250px;
+    }
+}
+.question-image-5-2 {
+    @include desktop{
+    width: 280px;
+    height: 250px;
+    }
+}
+.question-image-6-0 {
+    @include desktop{
+    width: 300px;
+    height: 250px;
+    }
+}
+.question-image-6-1 {
+    @include desktop{
+    width: 300px;
+    height: 250px;
+    }
+}
+.question-image-6-2 {
+    @include desktop{
+    width: 300px;
+    height: 250px;
     }
 }
 
 .question-image-7-0 {
     @include desktop{
-    width: 250px;
+    width: 200px;
     height: 250px;
     }
 }
@@ -123,9 +170,7 @@ align-items:baseline;
     width: 250px;
     height: 250px;
     }
-}
-
-        
+}       
     
 .answer-button{
     color: $regular-Brown;
@@ -137,6 +182,5 @@ align-items:baseline;
         width: 95%;
         border-radius: 5px;
         font-size: 25px;
-    }
-    
+    }  
 }
