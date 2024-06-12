@@ -13,10 +13,7 @@ h3,h2{
     width: 90%;
     padding: 16px;
     text-align: center;
-    // Result picture for desktop needs to be centered
-    // @include desktop{
-    //     text-align: center;
-    // }
+   
     &__resultPic{
         width: 100%;
         @include desktop{
@@ -27,6 +24,9 @@ h3,h2{
         @include desktop{
             margin-left: 24px;
         }
+    }
+    @include desktop{
+       margin-left: 32px;
     }
     
 }
