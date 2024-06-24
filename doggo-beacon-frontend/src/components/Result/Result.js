@@ -50,6 +50,7 @@ function Result({ completed, setCompleted }) {
     setMatchedCategories(location.state.matchedCategories);
   }, []); // Empty dependency array ensures useEffect only runs once after component mounts
   function compeletedQ() {
+    // navigate("/NextStep");
     navigate("/");
     setCompleted(false);
   }
@@ -102,7 +103,7 @@ function Result({ completed, setCompleted }) {
       </div>
 
       <button onClick={() => compeletedQ()} className="button">
-        DONE
+        Next Step
       </button>
     </div>
   );

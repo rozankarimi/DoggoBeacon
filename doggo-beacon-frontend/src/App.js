@@ -2,6 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import ResultPage from "./pages/ResultPage/ResultPage";
+import NextStepPage from "./pages/NextStep/NextStepPage";
 import { useState } from "react";
 
 function App() {
@@ -20,6 +21,12 @@ function App() {
             path="/result"
             element={
               <ResultPage completed={completed} setCompleted={setCompleted} />
+            }
+          />
+          <Route
+            path="/nextStep"
+            element={
+              <NextStepPage completed={completed} setCompleted={setCompleted} />
             }
           />
         </Routes>
