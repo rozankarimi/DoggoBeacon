@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import PetStore from "../../lotties/Animation - NextStep.json";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
+import MapComponent from "../MapComponent";
 
 export default function App() {
   const defaultOptions = {
@@ -73,6 +74,7 @@ export default function App() {
         </div>
         <div className="App--Main__map">
           <h2>Nearby PetStore</h2>
+          <MapComponent />
         </div>
       </div>
     </div>
