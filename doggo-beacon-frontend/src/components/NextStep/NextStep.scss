@@ -1,17 +1,50 @@
+// @use "../../styles/partials/fonts" as *;
+// @use "../../styles/partials/variables.scss" as *;
+// @use "../../styles/partials/mixins.scss" as *;
+
+// .App--Main{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     &__text{
+//         width: 30%;
+//         height: 90%;
+//     }
+//     &__map{
+//         width: 40vw;
+//         height: 80vh;
+//     }
+// }
+
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-.App--Main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    &__text{
-        width: 30%;
-        height: 90%;
-    }
-    &__map{
-        width: 40vw;
-        height: 80vh;
-    }
+.App--Main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &__text {
+    width: 30%;
+    height: 90%;
+  }
+  &__map {
+    width: 60%;
+    height: 80vh;
+    position: relative;
+  }
+}
+
+.map-container {
+  width: 60vw;
+  height: 150vh;
+}
+
+.marker {
+  background-image: url("https://placekitten.com/g/30/30"); /* Replace with your marker image */
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid blue;
 }
