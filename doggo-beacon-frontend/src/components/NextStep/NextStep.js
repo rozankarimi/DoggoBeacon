@@ -4,8 +4,10 @@ import PetStore from "../../lotties/Animation - NextStep.json";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import MapComponent from "../MapComponent";
+import { useNavigate } from "react-router-dom";
 
-export default function App() {
+export default function App({ setCompleted }) {
+  const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -22,6 +24,11 @@ export default function App() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  function compeletedQ() {
+    navigate("/");
+    setCompleted(false);
+  }
 
   return (
     <div>
@@ -76,6 +83,11 @@ export default function App() {
           <h2>Nearby PetStore</h2>
           <MapComponent />
         </div>
+      </div>
+      <div className="buttonWrapper">
+        <button onClick={() => compeletedQ()} className="button">
+          Start Over
+        </button>
       </div>
     </div>
   );

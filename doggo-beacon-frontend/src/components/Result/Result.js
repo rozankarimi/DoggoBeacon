@@ -34,7 +34,6 @@ function Result({ completed, setCompleted }) {
       try {
         const randomIndex = Math.floor(Math.random() * 21);
         const response = await axios.get("http://localhost:8080/result");
-        // console.log(response);
         setRandomFact(response.data[randomIndex].description);
       } catch (error) {
         console.error("Error fetching random dog fact:", error);
@@ -49,13 +48,11 @@ function Result({ completed, setCompleted }) {
   useEffect(() => {
     setMatchedCategories(location.state.matchedCategories);
   }, []); // Empty dependency array ensures useEffect only runs once after component mounts
-  function compeletedQ() {
-    navigate("/");
-    setCompleted(false);
-  }
+
   function moreInfo() {
     navigate("/NextStep");
   }
+
   return (
     <div>
       <div className="App--header">
@@ -88,7 +85,7 @@ function Result({ completed, setCompleted }) {
         <h3>Here is your Breed Matches:</h3>
         <hr />
         {matchedCategories.map((dog) => (
-          <div>
+          <div key={dog.name}>
             <h2>{dog.name}</h2>
             <img
               className="App--main__resultPic"
@@ -104,9 +101,6 @@ function Result({ completed, setCompleted }) {
         <p>{randomFact}</p>
       </div>
       <div className="buttonWrapper">
-        <button onClick={() => compeletedQ()} className="button">
-          Done
-        </button>
         <button onClick={() => moreInfo()} className="button">
           More Info
         </button>
@@ -114,4 +108,5 @@ function Result({ completed, setCompleted }) {
     </div>
   );
 }
+
 export default Result;
