@@ -20,7 +20,7 @@ const MapComponent = () => {
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/navigation-night-v1",
+      style: "mapbox://styles/mapbox/outdoors-v12",
       center: [lng, lat],
       zoom: zoom,
     });
