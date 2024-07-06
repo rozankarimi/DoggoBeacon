@@ -105,7 +105,7 @@ function Result({ completed, setCompleted }) {
       </div>
       <div className="buttonWrapper">
         <button onClick={() => compeletedQ()} className="button">
-          Done
+          Start Over
         </button>
         <button onClick={() => moreInfo()} className="button">
           More Info
