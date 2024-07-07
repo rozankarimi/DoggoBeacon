@@ -4,8 +4,10 @@ import PetStore from "../../lotties/Animation - NextStep.json";
 import siteLogo from "../../assets/logo/Logo.jpeg";
 import animationData from "../../lotties/Animation - PAW.json";
 import MapComponent from "../MapComponent";
+import { useNavigate } from "react-router-dom";
 
-export default function App() {
+export default function App({ setCompleted }) {
+  const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -23,11 +25,16 @@ export default function App() {
     },
   };
 
+  function compeletedQ() {
+    navigate("/");
+    setCompleted(false);
+  }
+
   return (
     <div>
       <div className="App--header">
         <div className="App--header__logo">
-          <img className="logoImageHeader" src={siteLogo} alt="siteLog" />
+          <img className="logoImageHeader" src={siteLogo} alt="siteLogo" />
         </div>
         <div className="App--header__text">
           <h1>Doggo Beacon</h1>
@@ -76,6 +83,22 @@ export default function App() {
           <h2>Nearby PetStore</h2>
           <MapComponent />
         </div>
+      </div>
+      <hr></hr>
+      <div className="closing-message">
+        <h2>Thank you for Using Doggo Beacon!</h2>
+        <p>
+          We hope you enjoyed exploring our features and learning more about our
+          services.
+        </p>
+        <p>
+          We're always working to improve and add new features. Be sure to check
+          back soon for the latest updates!
+        </p>
+        <p>Stay tuned for exciting new functionalities and enhancements.</p>
+        <button className="button" onClick={compeletedQ}>
+          Start Over
+        </button>
       </div>
     </div>
   );
