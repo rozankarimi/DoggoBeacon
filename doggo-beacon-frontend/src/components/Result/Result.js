@@ -53,6 +53,9 @@ function Result({ completed, setCompleted }) {
     navigate("/");
     setCompleted(false);
   }
+  function moreInfo() {
+    navigate("/NextStep");
+  }
   return (
     <div>
       <div className="App--header">
@@ -100,10 +103,14 @@ function Result({ completed, setCompleted }) {
         <h4>DOG FACT</h4>
         <p>{randomFact}</p>
       </div>
-
-      <button onClick={() => compeletedQ()} className="button">
-        DONE
-      </button>
+      <div className="buttonWrapper">
+        <button onClick={() => compeletedQ()} className="button">
+          Start Over
+        </button>
+        <button onClick={() => moreInfo()} className="button">
+          More Info
+        </button>
+      </div>
     </div>
   );
 }

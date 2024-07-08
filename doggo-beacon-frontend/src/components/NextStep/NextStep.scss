@@ -1,0 +1,56 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.App--Main {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  &__text {
+    width: 100%;
+    height: 90%;
+    padding: 0 10px;
+  }
+  &__map {
+    // padding: 0 20px;
+    // width: 60vw;
+    // height: 135vh;
+    position: relative;
+  }
+}
+
+.map-container {
+  padding-left: 15px;
+  // width: 60vw;
+  // height: 120vh;
+  position: relative;
+}
+
+.marker {
+  background-image: url("../../assets/logo/icons8-map-marker-50.png"); 
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+
+}
+.mapboxgl-popup-content{
+    position: absolute;
+    bottom: 500px;
+    right: 10px;
+    left: 15px;
+    
+}
+.closing-message{
+  padding-top: 50px;
+}
+.button{
+  width: auto;
+}
+.Training{
+  display: flex;
+  padding: 0 35px;
+  justify-content: space-between;
+}
