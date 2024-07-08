@@ -36,7 +36,7 @@ Back-End:
 ```
 
 .env
-.env.sample in zoomie-backend provides a sample of environment variables required to run this project. You will need to add the following environment variables to your .env file:
+.env.sample in DoggoBeacon-backend provides a sample of environment variables required to run this project. You will need to add the following environment variables to your .env file:
 
 PORT 
 DB_LOCAL_DBNAME 

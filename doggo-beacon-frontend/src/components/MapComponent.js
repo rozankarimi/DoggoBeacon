@@ -12,7 +12,7 @@ const MapComponent = () => {
   const [map, setMap] = useState(null);
   const [lng, setLng] = useState(-79.383186);
   const [lat, setLat] = useState(43.653225);
-  const [zoom, setZoom] = useState(10);
+  const [zoom, setZoom] = useState(15);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -80,23 +80,23 @@ const MapComponent = () => {
                   )
                 )
                 .addTo(map);
+            });
 
-              map.on("click", ".get-directions", function (e) {
-                const button = e.target;
-                const destLng = button.getAttribute("data-lng");
-                const destLat = button.getAttribute("data-lat");
+            map.on("click", ".get-directions", function (e) {
+              const button = e.target;
+              const destLng = button.getAttribute("data-lng");
+              const destLat = button.getAttribute("data-lat");
 
-                const directions = new MapboxDirections({
-                  accessToken: mapboxgl.accessToken,
-                  unit: "metric",
-                  profile: "mapbox/driving",
-                });
-
-                map.addControl(directions, "top-left");
-
-                directions.setOrigin([lng, lat]);
-                directions.setDestination([destLng, destLat]);
+              const directions = new MapboxDirections({
+                accessToken: mapboxgl.accessToken,
+                unit: "metric",
+                profile: "mapbox/driving",
               });
+
+              map.addControl(directions, "top-left");
+
+              directions.setOrigin([lng, lat]);
+              directions.setDestination([destLng, destLat]);
             });
           } else {
             console.error("No features found");
@@ -112,7 +112,7 @@ const MapComponent = () => {
     <div
       className="map-container"
       ref={mapContainerRef}
-      style={{ height: "120vh", width: "60vw" }}
+      style={{ height: "50vh", width: "95vw" }}
     />
   );
 };
