@@ -30,6 +30,15 @@ export default function App({ setCompleted }) {
     setCompleted(false);
   }
 
+  function redirectToDogTraining() {
+    window.location.href = "https://www.youtube.com/watch?v=jFMA5ggFsXU";
+  }
+  function redirectDogOnline() {
+    window.location.href = "https://theonlinedogtrainer.com/";
+  }
+  function redirectDogK9() {
+    window.location.href = "https://blog.k9pro.com.au/";
+  }
   return (
     <div>
       <div className="App--header">
@@ -78,6 +87,18 @@ export default function App({ setCompleted }) {
             playtime, and interactive toys can help keep your dog happy and
             healthy.
           </p>
+        </div>
+        <div className="Training">
+          <h3>For more information check out following resources:</h3>
+          <button className="button" onClick={redirectToDogTraining}>
+            Dog Training 101
+          </button>
+          <button className="button" onClick={redirectDogOnline}>
+            Doggy Dan
+          </button>
+          <button className="button" onClick={redirectDogK9}>
+            K9 Dog Blog
+          </button>
         </div>
         <div className="App--Main__map">
           <h2>Nearby PetStore</h2>
