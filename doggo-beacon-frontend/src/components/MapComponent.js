@@ -10,7 +10,7 @@ const MapComponent = () => {
   const [map, setMap] = useState(null);
   const [lng, setLng] = useState(-79.383186);
   const [lat, setLat] = useState(43.653225);
-  const [zoom, setZoom] = useState(10);
+  const [zoom, setZoom] = useState(12);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
